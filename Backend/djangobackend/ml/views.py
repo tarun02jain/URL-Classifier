@@ -454,7 +454,7 @@ def scan_file(request):
                 files = {'file': (file.name, f.read())}
                 upload_response = requests.post(
                     "https://www.virustotal.com/api/v3/files",
-                    headers={"x-apikey": "da4970605edd34ebe2bdb734605a1a088c8ee54d2130068c5cf545bdaf9a2ca6"},
+                    headers={"x-apikey": "[API KEY]"},
                     files=files,
                 )
 
@@ -475,7 +475,7 @@ def scan_file(request):
             for _ in range(10):  # Poll up to 5 times with a delay to get the results
                 analysis_response = requests.get(
                     analysis_url,
-                    headers={"x-apikey": "da4970605edd34ebe2bdb734605a1a088c8ee54d2130068c5cf545bdaf9a2ca6"}
+                    headers={"x-apikey": "[API KEY]"}
                 )
                 analysis_response_data = analysis_response.json()
 
@@ -553,8 +553,8 @@ def send_email(password,reciever_email):
     # Email server configuration
     smtp_server = "smtp.gmail.com"
     smtp_port = 587  # TLS port
-    sender_email = "classifierurl@gmail.com"
-    sender_password = "ogxp fxce aewe vqyx"
+    sender_email = "[Sender_email]"
+    sender_password = "[Sender_2fa_code]"
   # Use an App Password if 2FA is enabled on Gmail
 
     # Receiver's email
